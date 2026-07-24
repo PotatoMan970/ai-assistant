@@ -2,6 +2,8 @@ import tempfile
 import wave
 from collections import deque
 
+import parseInput
+
 import numpy as np
 import sounddevice as sd
 
@@ -39,9 +41,9 @@ wake_model = Model()
 
 print("Wake models:", wake_model.models.keys())
 
-#
+# -----------------------------
 # Beep
-#
+# -----------------------------
 
 def beep():
     frequency = 880  # Hz
@@ -274,3 +276,4 @@ while True:
     print(
         f"You said: {text}"
     )
+    parseInput.parse(text)
